@@ -1,0 +1,16 @@
+.loginForm{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 50px;
+}
+
+
+
+.loginInput{
+    padding: 5px 10px;
+    width: 30%;
+    color: white;
+    background-color: black;
+    text-align: center;
+}
