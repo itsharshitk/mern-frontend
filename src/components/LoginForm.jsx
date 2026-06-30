@@ -1,13 +1,19 @@
 import { useState } from "react";
 import './components.css';
 
-function Login () {
+function LoginForm () {
     const [email, setEmail] = useState("");
 
     return(
         <>
             <div className="loginForm">
-                <input className="loginInput" type="email" value={email} onChange={(e) => {setEmail(e.target.value)}} placeholder="Enter your email" />
+                <input 
+                className="loginInput" 
+                type="email" 
+                value={email} 
+                onChange={(e) => {setEmail(e.target.value)}} 
+                placeholder="Enter your email" 
+                />
             </div>
             
             <h2>Email is: {email}</h2>
@@ -15,4 +21,4 @@ function Login () {
     );
 }
 
-export default Login;
+export default LoginForm;
