@@ -3,19 +3,26 @@ import Counter from "./components/Counter";
 import LoginForm from "./components/LoginForm";
 import Title from "./components/UseEffect";
 import NotFound from "./components/NotFound";
+import Layout from "./common/Layout";
+import ProtectedRoutes from "./common/ProtectedRoutes";
 
 function App() {
   return(
     <>
-      <Link to="/">Home</Link> |
-      <Link to="/loginform">LoginForm</Link> |
-      <Link to="/title/23">TestUseEffect</Link>
-
       <Routes>
-        <Route path="/" element={<Counter />} />
-        <Route path="/loginform" element={<LoginForm />} />
-        <Route path="/title/:id" element={<Title />} />
-        <Route path="*" element={<NotFound />} />
+
+        <Route path="/" element={<Layout />}>
+          
+          <Route index element={<Counter />} />
+          <Route path="/loginform" element={<LoginForm />} />
+          <Route path="*" element={<NotFound />} />
+          
+          <Route element={<ProtectedRoutes />}>
+            <Route path="/title/:id" element={<Title />} />
+          </Route>
+
+        </Route>
+      
       </Routes>
     </>
   )
