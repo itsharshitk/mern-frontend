@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 
-function Title(){
+function Title(){    
     const { id } = useParams();
 
     useEffect(() => {
